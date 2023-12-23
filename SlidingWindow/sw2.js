@@ -22,8 +22,14 @@ const smallestSubarrayWithGivenSum = (s, arr) => {
   return minLen === arr.length ? 0 : minLen;
 };
 console.log(smallestSubarrayWithGivenSum(7, [2, 1, 5, 2, 3, 2]));
+// Output: 2
+
+// Time complexity: O(n). The outer for loop runs for all elements and the inner while loop processes each element only once, resulting in O(n + n), which resolves to O(n).
+
+// Space complexity: O(n), contant space
 
 /*
+Pseudocode:
 1.) First, we will add-up elements from the beginning of the array until their sum becomes greater than or equal to ‘S’.
 2.) These elements will constitute our sliding window. We are asked to find the smallest such window having a sum greater than or equal to ‘S’. We will remember the length of this window as the smallest window so far.
 3.) After this, we will keep adding one element in the sliding window (i.e. slide the window ahead), in a stepwise fashion.
