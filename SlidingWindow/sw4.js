@@ -31,6 +31,9 @@ const fruitBaskets = (arr) => {
 };
 console.log(fruitBaskets(["A", "B", "C", "A", "A", "C"]));
 // Output: 3 -> ['C', 'A', 'C']
+// Time Complexity: O(n) where n is num of chars in input array
+// -> the outer loop runs for all chars, and the inner loop processes each char only once, resulting in O(n + n), which resolves to O(n)
+// Space Complexity: constant space, O(1), as there can only be a max of 3 different chars that can be stored in the hashmap
 
 // logic:
 // iterate thru arr
@@ -44,5 +47,4 @@ console.log(fruitBaskets(["A", "B", "C", "A", "A", "C"]));
 // delete fruitCount[leftChar] from fruitCount
 // increment start +1
 // declare maxLen = Math.max(maxLen, end - start +1)
-
 // return maxLen
