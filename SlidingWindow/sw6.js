@@ -2,7 +2,21 @@
 Given a string with lowercase letters only, if you are allowed to replace no more than ‘k’ letters with any letter, find the length of the longest substring having the same letters after replacement.
 */
 
-const longestSub = (str, k) => {};
+const longestSub = (str, k) => {
+  let start = 0;
+  let maxLen = 0;
+  let maxRepeat = 0;
+  let charCount = {};
+
+  for (let end = 0; end < str.length; end++) {
+    let rightChar = str[end];
+    if (!(rightChar in charCount)) {
+      charCount[rightChar] = 0;
+    }
+    charCount[rightChar] += 1;
+    maxRepeat = Math.max(maxRepeat, charCount[rightChar]);
+  }
+};
 console.log(longestSub("abccde", 1));
 //Output: 3
 // Explanation: Replace the 'b' or 'd' with 'c' to have the longest repeating substring "ccc".
