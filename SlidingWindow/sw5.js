@@ -18,6 +18,8 @@ const noRepeats = (str) => {
 };
 console.log(noRepeats("aabccbb"));
 // Output = 3
+// Time Complexity= O(n), where n is the num of chars in str. We iterate thru str one time.
+// Space Complexity: O(k), where k is the num of distinct chars in the input str. This implies k <= n, because in the worst caase str might not have any repeating chars, so the whole str would be added to the hashmap. Although, we can expect to have a fixed set of chars, (no more than 26 english letters) so we can say this runs in fixed space. Because of this we could use a fixed-size array, instead of a hashmap.
 
 /* Approach: USE INDEXES NOT COUNTS. create a hashmap to store key (char) and value (index) of each letter as we iterate thru input string. As soon as we encounter a char that is already in the hashmap we set the new window start as the max of start (whatever the current index is) or the index of the last occurence of the char +1
 Then we check current maxLen against current window len and set new max if applicable (maxLen is calculated by subtracting indexes).
