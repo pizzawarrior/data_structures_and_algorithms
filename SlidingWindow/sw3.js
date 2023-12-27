@@ -1,4 +1,4 @@
-// Given a string, find the length of the longest substring in it with no more than (aka <= ) K DISTINCT characters.
+// Given a string, find the length of the longest substring in it with no more than ( <= ) K DISTINCT characters.
 
 const longestSubstring = (k, str) => {
   let wStart = 0;

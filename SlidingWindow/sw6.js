@@ -25,10 +25,11 @@ const longestSub = (str, k) => {
   }
   return maxLen;
 };
-console.log(longestSub("abccde", 1));
+console.log(longestSub("abaccdaeafgamxapqa", 1));
 //Output: 3
 // Explanation: Replace the 'b' or 'd' with 'c' to have the longest repeating substring "ccc".
 // Time Complexity: O(n)- Iterate thru array 1 time; n = num of chars in string
 // Space Complexity: O(1)- Technically it would be O(26) worst case, having to store values for each letter of alphabet in hashmap, which resolves to O(1).
 
-// Abstract: track start, end, and maxLen of str. iterate thru str, find longest substring of repeating letters using hashmap. curr window size is from start to end-- we find a letter that repeats maxRepeat times and the remaining letters we should replace. if remaining letters are > k, shrink window from start. return maxLen.
+/* Abstract: track start, end, maxLen of str, and maxRepeatingChars. Iterate thru str and find the max num of repeating chars using hashmap. Curr window size is from start to end-- if remaining letters in str (minus maxRepeat) are > k, shrink window from start, decrementing count of letters on left side of window-- since we can not have a maxLen that is greater than maxRepeat + k. Once we have the proper window size return maxLen.
+ */
