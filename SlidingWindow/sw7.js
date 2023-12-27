@@ -26,4 +26,4 @@ console.log(longestOnes([0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1], 2));
 // Time Complexity: O(n), where n is the num of nums in arr
 // Space Complexity: O(1), constant space.
 
-// Abstract: iterate thru arr, recording a window start, window end, maxOnes, and maxLength. In any current window we should have the maxOnes, and should try to replace the remaining 0s with k amount of ones. If we have more than k remaining 0s we will have to shrink the window, as we can't replace more than k 0s.
+// Abstract: iterate thru arr, recording a window start, window end, maxOnes, and maxLength. In any current window we should have the maxOnes, and should try to replace the remaining 0s with k amount of ones. If we have more than k remaining 0s we will have to shrink the window from the left (start), as we can't replace more than k 0s.
