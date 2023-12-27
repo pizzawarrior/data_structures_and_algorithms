@@ -8,7 +8,7 @@ const maxSubarray = (k, arr) => {
 
   for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
     windowSum += arr[windowEnd];
-    // slide window only if we have bit required window size
+    // slide window while keeping it the required size
     if (windowEnd >= k - 1) {
       maxSum = Math.max(maxSum, windowSum);
       //subtract element from count
