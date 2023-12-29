@@ -16,6 +16,7 @@ const anagrams = (str, pattern) => {
     result = [],
     charCount = {};
 
+  // iterate thru pattern first, record occurrence of chars
   for (let i = 0; i < pattern.length; i++) {
     const char = pattern[i];
     if (!(char in charCount)) {
@@ -24,6 +25,7 @@ const anagrams = (str, pattern) => {
     charCount[char] += 1;
   }
 
+  // iterate thru str next with goal of counting matches of chars in str with chars in pattern
   for (let end = 0; end < str.length; end++) {
     const rightChar = str[end];
     if (rightChar in charCount) {
@@ -33,10 +35,12 @@ const anagrams = (str, pattern) => {
       }
     }
 
+    // if we have a full match, push start index to result array
     if (matched === Object.keys(charCount).length) {
       result.push(start);
     }
 
+    // if we have moved the right marker in str beyond (or equal) to the index of THE END of our pattern length, slide start pointer over by 1. This keeps our window size.
     if (end >= pattern.length - 1) {
       leftChar = str[start];
       start += 1;
