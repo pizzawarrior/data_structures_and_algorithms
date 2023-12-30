@@ -14,16 +14,16 @@ const wordConcat = (str, words) => {
   if (words.length === 0 || words[0].length === 0) {
     return [];
   }
-
-  for (var word of words) {
+  // count words in word frequency hashmap
+  words.forEach((word) => {
     if (!(word in wordFreq)) {
       wordFreq[word] = 0;
     }
     wordFreq[word] += 1;
-  }
+  });
 
   //   get the target length of combined words we need to match, in this case 6.
-  for (i = 0; i < str.length - countWords * wordLen; i++) {
+  for (i = 0; i < str.length - countWords * wordLen + 1; i++) {
     const wordsSeen = {};
     for (j = 0; j < countWords; j++) {
       nextIndex = i + j * wordLen;
@@ -35,7 +35,7 @@ const wordConcat = (str, words) => {
       if (!(word in wordsSeen)) {
         wordsSeen[word] = 0;
       }
-      wordsSeen[0] += 1;
+      wordsSeen[word] += 1;
 
       if (wordsSeen[word] > wordFreq[word] || 0) {
         break;
