@@ -1,6 +1,6 @@
 /*
 Given a string and a pattern, find all anagrams of the pattern in the given string.
-Anagram is also a Permutation of a string. For example, “abc” has the following six anagrams:
+Anagram is also a permutation of a string. For example, “abc” has the following six anagrams:
 abc
 acb
 bac
@@ -16,7 +16,7 @@ const anagrams = (str, pattern) => {
     result = [],
     charCount = {};
 
-  // iterate thru pattern first, record occurrence of chars
+  // iterate thru pattern first, record occurrences of chars
   for (let i = 0; i < pattern.length; i++) {
     const char = pattern[i];
     if (!(char in charCount)) {
