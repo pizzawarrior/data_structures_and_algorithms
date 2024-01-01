@@ -19,7 +19,7 @@ const wordConcat = (str, words) => {
     if (!(word in wordFreq)) {
       wordFreq[word] = 0;
     }
-    wordFreq[word] += 1;
+    wordFreq[word]++;
   });
 
   //   get the target length of combined words we need to match, in this case 6.
@@ -27,7 +27,7 @@ const wordConcat = (str, words) => {
     const wordsSeen = {};
     for (j = 0; j < countWords; j++) {
       nextIndex = i + j * wordLen;
-      word = str.substring(nextIndex, nextIndex + wordLen);
+      let word = str.substring(nextIndex, nextIndex + wordLen);
       if (!(word in wordFreq)) {
         break;
       }
@@ -59,7 +59,7 @@ Iterate thru words array and count the frequency in a hashmap
 Start from every index in str and try to match all words
 In each iteration keep track of words we have already seen in another hashmap
 If a word is not found, or has a higher frequency than required, move to next char in str
-Add index to result aray if we have found all words
+Add index to result array only if we have found all required words
 Return result array
 
 */
