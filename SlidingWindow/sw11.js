@@ -48,8 +48,9 @@ const wordConcat = (str, words) => {
   }
   return result;
 };
-console.log(wordConcat("catcatfoxfox", ["cat", "fox"]));
-// Output: [3]
+console.log(wordConcat("catcatfoxfox", ["cat", "fox"])); // Output: [3]
+console.log(wordConcat("catfoxcatfox", ["cat", "fox"])); // Output: [0, 3, 6]
+
 // Time Complexity: O(n * m * length) where n is num of chars in str, m is num of words in words array, and length is the length of a word
 // Space Complexity: O(m + n). worst case we store all words in 2 hashmaps, where m is the num of words. We would also need O(n) space for the result array, where n is each index stored in the result array.
 
