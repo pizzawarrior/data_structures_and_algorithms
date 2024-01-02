@@ -29,7 +29,11 @@ const highestVal = (words, tiles) => {
   }
   return [maxPoints, maxWord];
 };
-console.log(highestVal(["twist", "him", "zit", "slug"], "ztswt_")); //Output: 11, 'zit'
+console.log(highestVal(["twist", "him", "zit", "slug"], "ztswt_")); // Output: 11, 'zit'
+/*
+Time Complexity: O(n * m * length) where n is the num of words, m is the str of tiles, and length is the length of str.
+Space Complexity: O(m + n) where worst case we store all words in 2 hashmaps, and m is num of of words. O(n) space would be for storing maxPoints.
+*/
 
 /* Abstract:
     Begin with a maxPoints var, wordIndex var, currentPoints var, and a charCount hashmap
