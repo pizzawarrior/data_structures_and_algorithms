@@ -8,6 +8,7 @@ const highestVal = (words, tiles) => {
     maxWord = "";
 
   for (let word of words) {
+    // bring in the same charCount for each word in words
     let tempCharCount = { ...charCount };
     let currentPoints = 0;
     for (let letter of word) {
@@ -28,7 +29,7 @@ const highestVal = (words, tiles) => {
   }
   return [maxPoints, maxWord];
 };
-console.log(highestVal(["twist", "him", "zit", "slug"], "ztswt_")); //Output: 11, 'z_t'
+console.log(highestVal(["twist", "him", "zit", "slug"], "ztswt_")); //Output: 11, 'zit'
 
 /* Abstract:
     Begin with a maxPoints var, wordIndex var, currentPoints var, and a charCount hashmap
