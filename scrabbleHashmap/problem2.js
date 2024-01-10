@@ -8,7 +8,7 @@ const highestVal = (words, tiles) => {
     maxWord = "";
 
   for (let word of words) {
-    // bring in the same charCount for each word in words
+    // bring in the same charCount for each word in words using spread syntax
     let tempCharCount = { ...charCount };
     let currentPoints = 0;
     for (let letter of word) {
