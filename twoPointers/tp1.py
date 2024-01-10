@@ -3,11 +3,22 @@
 
 
 def pair_of_indexes(arr, target):
-    start_pointer = arr[0]
-    end_pointer = arr[arr.length - 1]
+    left = 0
+    right = len(arr) - 1
 
-    if start_pointer + end_pointer == target:
-        return
+    while left < right:
+        current_sum = arr[left] + arr[right]
+
+        if current_sum == target:
+            return [left, right]
+
+        if current_sum > target:
+            right -= 1
+
+        else:
+            left += 1
+
+    return [-1, -1]
 
 
 print(pair_of_indexes([1, 2, 3, 4, 6], 6))  # Output: [1, 3]
