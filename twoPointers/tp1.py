@@ -3,12 +3,12 @@
 
 
 # Binary Search method:
-# def pair_of_indexes(arr, target):
+# def pair_of_indexes(lst, target):
 #     left = 0
-#     right = len(arr) - 1
+#     right = len(lst) - 1
 
 #     while left < right:
-#         current_sum = arr[left] + arr[right]
+#         current_sum = lst[left] + lst[right]
 
 #         if current_sum == target:
 #             return [left, right]
@@ -37,25 +37,28 @@ Abstract:
 -else return [-1, -1]
 """
 
+
 # Alternative: Use a HashTable
 
 
-def alt_pair_of_indexes(arr, target):
+def alt_pair_of_indexes(lst, target):
     nums = {}
-    for i, num in enumerate(arr):
+    for i, num in enumerate(lst):
+        # enumerate(lst) = [(0, 1), (1, 2), (2, 3), (3, 4), (4, 6)]
         if target - num in nums:
             return [nums[target - num], i]
         else:
-            nums[arr[i]] = i
+            nums[lst[i]] = i
+            # nums = {1: 0, 2: 1, 3: 2, 4: 3, 6: 4}
     return [-1, -1]
 
 
-def main():
+def results():
     print(alt_pair_of_indexes([1, 2, 3, 4, 6], 6))
     print(alt_pair_of_indexes([2, 5, 9, 11], 47))
 
 
-main()
+results()
 # Time Complexity: O(n) where n = the number of elements in the input array
 # Space Complexity: O(n) where worst case we will append n numbers to the hashtable
 
