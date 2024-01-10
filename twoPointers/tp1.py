@@ -3,7 +3,11 @@
 
 
 def pair_of_indexes(arr, target):
-    pass
+    start_pointer = arr[0]
+    end_pointer = arr[arr.length - 1]
+
+    if start_pointer + end_pointer == target:
+        return
 
 
-print(pair_of_indexes([1, 2, 3, 4, 6]), 6)  # Output: [1, 3]
+print(pair_of_indexes([1, 2, 3, 4, 6], 6))  # Output: [1, 3]
