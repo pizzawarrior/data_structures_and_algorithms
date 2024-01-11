@@ -13,6 +13,8 @@ def clean_length(lst, key):
 
 
 print(clean_length([3, 2, 3, 6, 3, 10, 9, 3], 3))  # Output: 4
+# Time Complexity: O(n) where n is num of elements in list
+# Space Complexity: O(1) constant space
 """
 Abstract:
 Set left pointer 'sorted_index' to 0
