@@ -3,26 +3,26 @@
 
 
 # Binary Search method:
-# def pair_of_indexes(lst, target):
-#     left = 0
-#     right = len(lst) - 1
+def pair_of_indexes(lst, target):
+    left = 0
+    right = len(lst) - 1
 
-#     while left < right:
-#         current_sum = lst[left] + lst[right]
+    while left < right:
+        current_sum = lst[left] + lst[right]
 
-#         if current_sum == target:
-#             return [left, right]
+        if current_sum == target:
+            return [left, right]
 
-#         if current_sum > target:
-#             right -= 1
+        if current_sum > target:
+            right -= 1
 
-#         else:
-#             left += 1
+        else:
+            left += 1
 
-#     return [-1, -1]
+    return [-1, -1]
 
 
-# print(pair_of_indexes([1, 2, 3, 4, 6], 6))  # Output: [1, 3]
+print(pair_of_indexes([1, 2, 3, 4, 6], 6))  # Output: [1, 3]
 # Time Complexity: O(n) where n = the number of elements in the input array
 # Space Complexity: O(1) constant space
 
@@ -41,24 +41,24 @@ Abstract:
 # Alternative: Use a HashTable
 
 
-# def alt_pair_of_indexes(lst, target):
-#     nums = {}
-#     for i, num in enumerate(lst):
-#         # enumerate(lst) = [(0, 1), (1, 2), (2, 3), (3, 4), (4, 6)]
-#         if target - num in nums:
-#             return [nums[target - num], i]
-#         else:
-#             nums[lst[i]] = i
-#             # nums = {1: 0, 2: 1, 3: 2, 4: 3, 6: 4}
-#     return [-1, -1]
+def alt_pair_of_indexes(lst, target):
+    nums = {}
+    for i, num in enumerate(lst):
+        # enumerate(lst) = [(0, 1), (1, 2), (2, 3), (3, 4), (4, 6)]
+        if target - num in nums:
+            return [nums[target - num], i]
+        else:
+            nums[lst[i]] = i
+            # nums = {1: 0, 2: 1, 3: 2, 4: 3, 6: 4}
+    return [-1, -1]
 
 
-# def results():
-#     print(alt_pair_of_indexes([1, 2, 3, 4, 6], 6))
-#     print(alt_pair_of_indexes([2, 5, 9, 11], 47))
+def results():
+    print(alt_pair_of_indexes([1, 2, 3, 4, 6], 6))
+    print(alt_pair_of_indexes([2, 5, 9, 11], 47))
 
 
-# results()
+results()
 # Time Complexity: O(n) where n = the number of elements in the input array
 # Space Complexity: O(n) where worst case we will append n numbers to the hashtable
 

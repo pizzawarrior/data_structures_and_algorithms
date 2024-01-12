@@ -24,5 +24,7 @@ Iterate thru range of lst length with i as iterator
         sorted_index += 1
 return sorted_index
 
-Notes: sorted_index is the pivot; everything to the left of it is sorted. sorted_index only moves to the right when i finds a number to keep (a number that does not match key). When i finds a num to keep it sends it to the current index of sorted_index. This is why we return soreted_index.
+Notes: sorted_index is the pivot; everything to the left of it is sorted.
+sorted_index only moves to the right when i finds a number to keep (a number that does not match key). When i finds a num to keep, it sends it to the current index of sorted_index.
+This is why we return soreted_index.
 """
