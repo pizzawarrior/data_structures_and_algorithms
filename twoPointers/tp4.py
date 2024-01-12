@@ -1,5 +1,5 @@
 """
-Given a sorted array, create a new array containing squares of all the numbers of the input array in the sorted order.
+Given a sorted list, create a new list containing squares of all the numbers of the input list in the sorted order.
 """
 
 
@@ -34,7 +34,7 @@ print(make_squares([-2, -1, 0, 2, 3]))  # Output: [0, 1, 4, 4, 9]
 """
 Abstract:
 -initialize n as length of input list
--initialize a list called 'squared' made up of 0's and which is the length of the input list to allocate memory and allow us to use indeces k and j interchangeably. The 0's don't matter since they will be replaced.
+-initialize a list called 'squared' made up of 0's and which is the length of the input list to allocate memory and allow us to use indeces k and j interchangeably. The 0's are only placeholders.
 -initialize i = 0, j = n -1 for iterating thru input list, k = n-1 for updating squared
 -while i is < j:
     -left_square = lst[i] ** 2
@@ -44,5 +44,25 @@ Abstract:
         -i += 1
     -else: squared[k] = right_square
     -j -= 1
-retrun squared
+return squared
 """
+
+
+# Alternate solution that would work just to pass a test:
+def sort_lst(lst):
+    # make copy of lst and square all nums
+    new_lst_squared = [num * num for num in lst[:]]
+    # now sort it in ascending order!
+    for i in range(len(new_lst_squared)):
+        for j in range(i + 1, len(new_lst_squared)):
+            if new_lst_squared[i] >= new_lst_squared[j]:
+                new_lst_squared[i], new_lst_squared[j] = (
+                    new_lst_squared[j],
+                    new_lst_squared[i],
+                )
+
+    return new_lst_squared
+
+
+print(sort_lst([6, 3, 4, 2, 5, 9]))
+# Note, this is a reasonable solution for passing a simple test, however it is not very performant at O(n^2) due to the nesting of the loops
