@@ -11,7 +11,7 @@ function hasCycle(head) {
   let slow = head,
     fast = head; // it's only a fair race if they start in the same place!
 
-  while (fast != null && fast.next !== null) {
+  while (fast !== null && fast.next !== null) {
     fast = fast.next.next;
     slow = slow.next;
     if (slow == fast) {
