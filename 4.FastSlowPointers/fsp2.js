@@ -10,9 +10,12 @@ class Node {
   }
 }
 
-const find_cycle_start = (head) => {};
+const find_cycle_start = (head) => {
+  let slow = head,
+    fast = head;
+};
 
-head = new Node(1);
+const head = new Node(1);
 head.next = new Node(2);
 head.next.next = new Node(3);
 head.next.next.next = new Node(4);

@@ -42,7 +42,7 @@ Slow pointer moves up one step, fast moves 2. This can have 2 outcomes:
 -if fast finds the end of the LL before the slow one it means that there is no cycle
 -the slow pointer will never be able to catch the fast pointer if there is no cycle (if the fast pointer hits the end first)
 If the LL has a cycle, the fast pointer enters first, followed by the slow one. They keep cycling infinitely. If the pointers meet at any stage it means there is a cycle.
-When the fast pointer wouls approach the slow one from behind (while inside of a loop) we have 2 possibilities:
+When the fast pointer would approach the slow one from behind (while inside of a loop) we have 2 possibilities:
 -fast pointer is 1 step behind the slow pointer
 -fast pointer is 2 steps behind slow pointer
 All other distances btwn the pointers will reduce to one of these 2 possibilities:
