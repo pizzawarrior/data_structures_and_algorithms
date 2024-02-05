@@ -11,9 +11,33 @@ class Node {
 }
 
 const find_cycle_start = (head) => {
-  let slow = head,
-    fast = head;
+  let pointer1 = head,
+    pointer2 = head;
+
+  while (pointer1 !== null && pointer1.next !== null) {
+    pointer1 = pointer1.next.next;
+    pointer2 = pointer2.next;
+
+    if (pointer2 === pointer1) {
+      return calcCycleLength(pointer2);
+    }
+  }
+  return 0;
 };
+
+function calcCycleLength(pointer2) {
+  let current = pointer2,
+    cycleLength = 0;
+
+  while (true) {
+    current = current.next;
+    cycleLength += 1;
+    if (current === pointer2) {
+      break;
+    }
+  }
+  return cycleLength;
+}
 
 const head = new Node(1);
 head.next = new Node(2);
