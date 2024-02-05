@@ -41,6 +41,22 @@ console.log(findHappyNum(12));
 Output:
 true
 false
+
+Time Complexity: O(logN)
+This one is tough to calculate. However, we know that all unhappy numbers get stuck in a cycle.
+This sequence behavior tells us two things:
+1. If the number N is <= 1000, then we reach the cycle, or '1' in at most 1001 steps.
+2. For N > 1000 suppose the number has M digits, and the next number is N1.
+From the wikipedia link on sequence behavior we know the sum of the squares
+of the digits of 'N' is at most 9^2 M, or 81M, (this will happen when all digits of N are 9)
+
+This means:
+1. N1 < 81M
+2. We know M = log(N + 1)
+3. Therefore: N1 < 81 * log(N + 1) => N1 = O(logN)
+
+Space Complexity:
+Constant space O(1)
 */
 
 /*
