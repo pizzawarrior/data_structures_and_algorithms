@@ -20,6 +20,7 @@ class Interval {
     this.start = start;
     this.end = end;
   }
+  // handle how it prints the result:
   printInterval() {
     process.stdout.write(`[${this.start},${this.end}]`);
   }
@@ -29,6 +30,7 @@ const merge = (intervals) => {
   if (intervals.length < 2) {
     return intervals;
   }
+  // sort intervals by start time
   intervals.sort((a, b) => a.start - b.start);
 
   const mergedIntervals = [];
@@ -75,6 +77,12 @@ for (let i = 0; i < result.length; i++) {
 console.log();
 
 /*
+Time Complexity:O(N * logN) where N is the total num of intervals. We iterate thru the intervals only once
+which takes O(N) but because we sort in the beginning it produces O(N * logN)
+Space Complexity: O(N) as we need to return a ist containing all merged intervals. We also need O(N) space for sorting.
+*/
+
+/*
 Abstract:
 - Goal is to merge intervals whenever they overlap.
 - Take 2 intervals, a and b. Sort the intervals by where they start to ensure a.start <= b.start
@@ -82,4 +90,8 @@ Abstract:
 -> c.start = a.start
 -> c.end = max(a.end, b.end)
 - repeat these above 2 steps to merge c with the next interval if it overlaps with c.
+*/
+
+/*
+Bonus points: what's with the combination above of process.stdout.write and console.log()?
 */
