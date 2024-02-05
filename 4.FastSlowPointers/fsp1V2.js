@@ -47,9 +47,13 @@ console.log(`LL cycle length? ${findCycleLength(head)}`);
 
 head.next.next.next.next.next.next = head.next.next.next; // give us another loop
 console.log(`LL cycle length?? ${findCycleLength(head)}`);
+/* Output:
+LL cycle length? 4
+LL cycle length?? 3
+*/
 
 /*
 Abstract: We can use the solution to the previous problem to find the cycle in the LinkedList.
-Once the fast and slow pointers meet, we can save the slow pointer and iterate the whole cycle with
+Once the fast and slow pointers meet, we can save the slow pointer's location and iterate the whole cycle with
 another pointer until we see the slow pointer again to find the length of the cycle.
 */
