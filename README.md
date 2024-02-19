@@ -7,8 +7,9 @@
 - Practice makes Happy! (Do we really ever think we are going to be perfect??)
 
 **Contents**
-- Your usual common patterns and data structures, with an approach that alternates JavaScrpt and Python. (Gotta stay sharp!)
-- Each common pattern folder has a file called 'intro.md' which describes what the pattern is, how it works, and an example of what it is commonly used for.
+- Your usual common patterns and data structures, with an approach that alternates between JavaScrpt and Python. (Gotta stay sharp!)
+- Each common pattern folder has a file called 'intro.md' which describes what the pattern is, how it works, and an example of what it is commonly used for
+- Each problem features an explanation of the approach for the solution, as well as the Big O Time Complexity and Space Complexity outcome
 
 **Remember**
 - This is supposed to be fun!
