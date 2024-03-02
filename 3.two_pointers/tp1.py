@@ -54,8 +54,8 @@ def alt_pair_of_indexes(lst, target):
 
 
 def results():
-    print(alt_pair_of_indexes([1, 2, 3, 4, 6], 6))
-    print(alt_pair_of_indexes([2, 5, 9, 11], 47))
+    print(alt_pair_of_indexes([1, 2, 3, 4, 6], 6))  # Output: [1, 3]
+    print(alt_pair_of_indexes([2, 5, 9, 11], 47))  # Output: [-1, -1]
 
 
 results()
