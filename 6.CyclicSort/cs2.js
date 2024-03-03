@@ -36,3 +36,15 @@ function findMissingNum(nums) {
 }
 console.log(findMissingNum([4, 0, 3, 1])); // Output: 2
 console.log(findMissingNum([8, 3, 5, 2, 4, 6, 0, 1])); // Output: 7
+/*Time Complexity: O(n) -> In the while loop, although we are not incrementing the index i when
+swapping the numbers, this will result in more than ‘n’ iterations of the loop,
+but in the worst-case scenario, the while loop will swap a total of ‘n-1’ numbers and
+once a number is at its correct index, we will move on to the next number by incrementing i.
+Space Complexity: Constant space O(1)
+*/
+
+/*
+Abstract:
+-sort array first by swapping
+-then loop through sorted array, and when we find a number that does not equal the index we return that index
+*/
