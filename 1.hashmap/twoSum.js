@@ -19,6 +19,8 @@ const twoSum = (nums, target) => {
 
 console.log(twoSum([41, 3, 7, 1, 19], 4));
 //Output: [1, 3]
+// Time Complexity: O(n) where n is the length of nums
+// Space Complexity: O(n) constant space where n would be the num of numbers stored in the hashmap
 
 /*
 Abstract:
