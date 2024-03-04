@@ -17,15 +17,14 @@ function findMissingNum(nums) {
   const n = nums.length;
 
   while (i < n) {
-    // 4, 0, 3, 1
-    let j = nums[i]; // 4
+    let j = nums[i];
     if (nums[i] < n && nums[i] !== nums[j]) {
-      //
       [nums[i], nums[j]] = [nums[j], nums[i]]; // swap
     } else {
-      i += 1; //
+      i += 1;
     }
   }
+  // arr = [0, 1, 3, 4]
   for (let i = 0; i < n; i++) {
     if (nums[i] !== i) {
       return i;
@@ -45,6 +44,6 @@ Space Complexity: Constant space O(1)
 
 /*
 Abstract:
--sort array first by swapping
+-sort array first by swapping each number
 -then loop through sorted array, and when we find a number that does not equal the index we return that index
 */
