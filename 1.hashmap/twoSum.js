@@ -10,10 +10,11 @@ const twoSum = (nums, target) => {
 
   for (let i = 0; i < nums.length; i++) {
     let compliment = target - nums[i];
-    if (mapObj.hasOwnProperty(compliment)) {
+    if (mapObj[compliment] !== undefined) {
       return [mapObj[compliment], i];
+    } else {
+      mapObj[nums[i]] = i;
     }
-    mapObj[nums[i]] = i;
   }
 };
 
