@@ -19,5 +19,12 @@ def find_missing_nums(nums):
     pass
 
 
-print(find_missing_nums([2, 3, 2, 1]))
+print(find_missing_nums([2, 3, 2, 1]))  # [1, 2, 2, 3]
 # Output: 4
+
+"""
+Abstract:
+-we want to sort the array first
+-then iterate through sorted array
+-wherever the num in the sorted array does not equal i -1 we want to return that number
+"""
