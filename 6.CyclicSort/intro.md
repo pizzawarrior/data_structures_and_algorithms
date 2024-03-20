@@ -1,15 +1,22 @@
 Cyclic sort is an in-place sorting algorithm.
 
-A pattern that describes an interesting approach to deal with problems involving arrays containing numbers in a given range.
+It relies on an array of keys having the same value (or very close) of their index.
+Eg: [4, 2, 1, 3, 0]
+Sorted: [0, 1, 2, 3, 4]
+Sorted (with index for ref): [0: 0, 1: 1, 2: 2, 3: 3, 4: 4]
+
+Start by assigning i to value 0, and j to value of the index of i.
+If arr[i] !== arr[j]
+Sort the nums in place until sorted
+
 
 Catch and Release:
-
 Catch:
 Start with the first element and "catch" it.
 Check if it's in its correct position.
 If not, swap it with the element at its correct position.
-Release:
 
+Release:
 "Release" the element to its correct position.
 Move to the next element and repeat the process.
 Repeat:
