@@ -4,8 +4,8 @@ class Node {
   }
 
   getList() {
-    result = "";
-    temp = this;
+    let result = "";
+    let temp = this;
     while (temp !== null) {
       result += temp.value + " ";
       temp = temp.next;
@@ -15,11 +15,18 @@ class Node {
 }
 
 const reverse = function (head) {
-  // code here
-  return head;
+  let current = head,
+    previous = null;
+  while (current !== null) {
+    let next = current.next; // temporarily store the next node
+    current.next = previous; // reverse the current node
+    previous = current; // before we move to the next node point previous to current node
+    current = next; // move onto the next node
+  }
+  return previous;
 };
 
-head = new Node(2);
+let head = new Node(2);
 head.next = new Node(4);
 head.next.next = new Node(6);
 head.next.next.next = new Node(8);
