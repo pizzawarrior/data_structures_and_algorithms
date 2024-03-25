@@ -10,7 +10,7 @@ If arr[i] !== arr[j]
 Sort the nums in place until sorted
 
 
-Catch and Release:
+Think of it as: Catch and Release
 Catch:
 Start with the first element and "catch" it.
 Check if it's in its correct position.
