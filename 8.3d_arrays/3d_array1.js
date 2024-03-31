@@ -1,4 +1,5 @@
 // Return the weight of the first index from the provided 3d array
+// in this example, 'weight' means value
 
 function getWeightOfFirstIndex(threeDArray) {
   if (!Array.isArray(threeDArray) || threeDArray.length !== 2) {
