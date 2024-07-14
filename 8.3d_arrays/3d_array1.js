@@ -1,13 +1,6 @@
 // Return the weight of the first index from the provided 3d array
 // in this example, 'weight' means value
 
-function getWeightOfFirstIndex(threeDArray) {
-  if (!Array.isArray(threeDArray) || threeDArray.length !== 2) {
-    return null;
-  }
-  return threeDArray[0][0][0];
-}
-
 const threeDArray = [
   [
     [15, 27, -1],
@@ -18,5 +11,12 @@ const threeDArray = [
     [88, 5409, 444],
   ],
 ];
+
+function getWeightOfFirstIndex(arr) {
+  if (!Array.isArray(arr) || arr.length !== 2) {
+    return null;
+  }
+  return arr[0][0][0];
+}
 
 console.log(getWeightOfFirstIndex(threeDArray)); // Output: 15
